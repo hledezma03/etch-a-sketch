@@ -1,5 +1,5 @@
 let userChoice = 16;
-let iteration = 0;
+
 
 const gridContainer = document.querySelector("#grid-container");
 let gridItemSize = 100 / userChoice;
@@ -9,7 +9,6 @@ createGrid();
 
 
 btn.addEventListener("click", () =>{
-    iteration = 0;
     userChoice = parseInt(prompt('Enter the size of the new grid (max: 100): '))
     if (!isNaN(userChoice) && userChoice > 0 && userChoice <= 100) {
         gridContainer.innerHTML = '';
@@ -56,16 +55,10 @@ function createGrid() {
 }
 
 function randomColor(gridItem) { 
-    iteration++
 
-    let darkeningFactor = 1 - (iteration / 10);
-
-    let red = Math.floor(255 * darkeningFactor)
-    let green = Math.floor(255 * darkeningFactor)
-    let blue = Math.floor(255 * darkeningFactor)
-    //let red = Math.floor(Math.random() * 256)
-    //let green = Math.floor(Math.random() * 256)
-    //let blue = Math.floor(Math.random() * 256)
+    let red = Math.floor(Math.random() * 256)
+    let green = Math.floor(Math.random() * 256)
+    let blue = Math.floor(Math.random() * 256)
     let newColor = `rgb(${red},${green},${blue})`
     gridItem.style.backgroundColor = newColor
 }
