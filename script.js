@@ -49,16 +49,7 @@ function createGrid() {
 
     items.forEach(item => {
         item.addEventListener("mouseover", () => {
-            randomColor(item);
+            item.style.backgroundColor = 'grey'
         });
     });
-}
-
-function randomColor(gridItem) { 
-
-    let red = Math.floor(Math.random() * 256)
-    let green = Math.floor(Math.random() * 256)
-    let blue = Math.floor(Math.random() * 256)
-    let newColor = `rgb(${red},${green},${blue})`
-    gridItem.style.backgroundColor = newColor
 }
